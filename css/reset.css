@@ -1,0 +1,21 @@
+html, body, div, span, iframe
+h1, h2, h3, h4, h5, h6, p, a, b, u, i, ol, ul, li, table, figure, header, footer, main, nav, aside, article, section, audio, video{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  font: inherit;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+ul, li{
+  list-style: none;
+}
+input{
+  border: none;
+  outline: none;
+}
