@@ -91,6 +91,7 @@ $(window).scroll(function () {
   if (scroll <= $(".intro").offset().top) {
     $(".btn1").css("color", "white");
     $(".navi a").css("color", "gray");
+    $(".navi a").mouseover().css("color", "white");
     $(".navi span").css("color", "gray");
     $(".header_indicator>a").not(".btn1").css("color", "gray");
   } else if (scroll <= $(".works").offset().top) {
@@ -137,10 +138,7 @@ $(".slider").on("afterChange", function (event, slick, currentSlide) {
 });
 // modal_open
 $(".modal_open").click(function () {
-  if ($(window).width() < 767) {
-  } else {
-    $(".modal_back").fadeIn();
-  }
+  $(".modal_back").fadeIn();
 });
 $(".modal_close ").click(function () {
   $(".modal_back").fadeOut();
@@ -150,33 +148,47 @@ $(".modal_close ").click(function () {
 $(".swiper").mousemove(function (e) {
   const mouseX = e.clientX;
   const mouseY = e.clientY;
-  $(".pointer").css("top", mouseY - 100 + "px");
-  $(".pointer").css("left", mouseX - 650 + "px");
-  $(".pointer").fadeIn();
+  if ($(window).width() > 767) {
+    $(".pointer").css("top", mouseY - 100 + "px");
+    $(".pointer").css("left", mouseX - 650 + "px");
+    $(".pointer").fadeIn();
+  }
 });
 $(".swiper").on("mouseleave", function () {
   $(".pointer").fadeOut();
 });
 // section_trend
-$(".trend_wrapper").mousemove(function (e) {
-  const mouseXX = -e.clientX;
-  const mouseXXX = e.clientX;
-  const mouseYY = e.clientY;
-  if (mouseXXX < 800) {
-    $(".trend_img1").css("left", mouseXX);
-    $(".trend_img2").css("left", mouseXX + 1500 + "px");
-    $(".trend_img2").css("zIndex", "65");
+$(window).on("load resize", function () {
+  if ($(window).width() > 768) {
+    $(".trend_wrapper").mousemove(function (e) {
+      const mouseXX = -e.clientX;
+      const mouseXXX = e.clientX;
+      const mouseYY = e.clientY;
+      if (mouseXXX < 800) {
+        $(".trend_img1").css("left", mouseXX);
+        $(".trend_img2").css("left", mouseXX + 1600);
+        $(".trend_img2").css("zIndex", "65");
+      } else {
+      }
+      if (mouseXXX > 800) {
+        $(".trend_img1").css("left", mouseXX);
+        $(".trend_img2").css("left", mouseXX + 1600);
+        $(".trend_img2").css("zIndex", "77");
+      }
+    });
+    $(".trend_wrapper").mouseleave(function () {
+      $(".trend_img1").css("position", "absolute").css("left", "-50%");
+      $(".trend_img2").css("position", "absolute").css("left", "50%");
+    });
+  }
+  if ($(window).width() < 768) {
+    $(".trend_wrapper").off("mousemove").off("mouseleave");
+    $(".trend_img1").css("position", "relative").css("left", "0");
+    $(".trend_img2").css("position", "relative").css("left", "0");
   } else {
+    $(".trend_img1").css("position", "absolute").css("left", "-50%");
+    $(".trend_img2").css("position", "absolute").css("left", "50%");
   }
-  if (mouseXXX > 800) {
-    $(".trend_img1").css("left", mouseXX);
-    $(".trend_img2").css("left", mouseXX + 1600);
-    $(".trend_img2").css("zIndex", "77");
-  }
-});
-$(".trend_wrapper").mouseleave(function (e) {
-  $(".trend_img1").css("position", "absolute").css("left", "-50%");
-  $(".trend_img2").css("position", "absolute").css("left", "50%");
 });
 // trend_hover
 $(".trend_hover").mouseenter(function () {

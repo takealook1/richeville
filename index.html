@@ -8,6 +8,7 @@
     <!-- Css -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/respovsive.css" />
     <!-- Fontawesome -->
     <link
       rel="stylesheet"
@@ -180,9 +181,9 @@
           <!-- Initialize Swiper -->
           <script>
             var swiper = new Swiper(".mySwiper", {
-              spaceBetween: 150,
+              spaceBetween: 0,
               effect: "coverflow",
-              slidesPerView: 1.5,
+              slidesPerView: 1,
               touchStartPreventDefault: false,
               allowTouchMove: true,
               coverflowEffect: {
@@ -195,6 +196,12 @@
               pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
+              },
+              breakpoints: {
+                768: {
+                  slidesPerView: 1.5, //브라우저가 768보다 클 때
+                  spaceBetween: 150,
+                },
               },
               on: {
                 activeIndexChange: function () {
