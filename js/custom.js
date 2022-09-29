@@ -6,6 +6,7 @@ window.addEventListener(
   },
   { passive: false }
 );
+
 var $html = $("html");
 
 var page = 1;
@@ -16,11 +17,11 @@ $html.animate({ scrollTop: 0 }, 10);
 $(window).on("wheel", function (e) {
   if ($html.is(":animated")) return;
 
-  if (e.originalEvent.deltaY > 0) {
+  if (e.originalEvent.deltaY >= 0) {
     if (page == lastPage) return;
 
     page++;
-  } else if (e.originalEvent.deltaY < 0) {
+  } else if (e.originalEvent.deltaY <= 0) {
     if (page == 1) return;
 
     page--;
@@ -29,12 +30,14 @@ $(window).on("wheel", function (e) {
 
   $html.animate({ scrollTop: posTop });
 });
+
 // text
 new TypeIt(".js_type", {
   speed: 250,
   waitUntilVisible: true,
   loop: false,
 })
+
   .type("Richeville") // 타이핑
   // .pause(500) //멈춤
   // .delete(3)
@@ -50,7 +53,9 @@ new TypeIt(".js_type", {
   .go(); // 실행
 
 // indicator
+
 $(".btn1").click(function () {
+  page = 1;
   $("html, body").animate(
     {
       scrollTop: $(".intro").offset().top,
@@ -59,6 +64,7 @@ $(".btn1").click(function () {
   );
 });
 $(".btn2").click(function () {
+  page = 2;
   $("html, body").animate(
     {
       scrollTop: $(".works").offset().top,
@@ -67,6 +73,7 @@ $(".btn2").click(function () {
   );
 });
 $(".btn3").click(function () {
+  page = 3;
   $("html, body").animate(
     {
       scrollTop: $(".trend").offset().top,
@@ -75,6 +82,7 @@ $(".btn3").click(function () {
   );
 });
 $(".btn4").click(function () {
+  page = 4;
   $("html, body").animate(
     {
       scrollTop: $(".service").offset().top,
@@ -109,11 +117,11 @@ $(window).scroll(function () {
     $(".navi img").css("filter", "invert(1)");
     $(".logo a img").css("filter", "invert(0)");
   } else if (scroll > $(".service").offset().top) {
-    $(".btn4").css("color", "white");
-    $(".header_indicator>a").not(".btn4").css("color", "gray");
     $("nav").fadeOut();
   } else {
     $("nav").fadeIn();
+    $(".btn4").css("color", "white");
+    $(".header_indicator>a").not(".btn4").css("color", "gray");
   }
 });
 // Header_notice_slick

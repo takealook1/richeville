@@ -1,0 +1,148 @@
+@media (max-width: 1430px) {
+  /* footer */
+  .footer_logo {
+    grid-column: span 4;
+    order: 1;
+  }
+  .footer_text {
+    grid-column: 2 / span 11;
+    order: 3;
+  }
+  .footer_sns {
+    grid-column: span 8;
+    order: 2;
+  }
+}
+@media (max-width: 800px) {
+  /* header */
+  nav {
+    align-items: center;
+    position: absolute;
+  }
+  .navi a {
+    display: none;
+  }
+  .navi span {
+    display: none;
+  }
+  .logo a img {
+    transform: scale(0.8);
+  }
+  .js_type {
+    display: none;
+  }
+  .video_box video {
+    object-fit: cover;
+  }
+  .header_indicator {
+    display: none;
+  }
+  .header_notice {
+    display: none;
+  }
+  /* modal */
+  .modal {
+    flex-direction: column;
+  }
+  .modal_list {
+    margin-top: 1em;
+  }
+  .modal_list ul {
+    height: 100%;
+  }
+  /* section works */
+  .works_wrapper {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
+  .works_text {
+    margin: 2em 0;
+  }
+  /* swiper */
+  .swiper {
+    width: 100%;
+    height: 300px;
+  }
+  .swiper-pagination {
+    display: none;
+  }
+  .circle_rotate {
+    top: 0;
+    left: 50%;
+  }
+  /* section trend */
+  .trend_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .trend_left {
+    position: unset;
+  }
+  .trend_left .trend_img1 {
+    position: relative;
+    left: 0;
+    width: 100%;
+  }
+  .trend_right {
+    position: unset;
+  }
+  .trend_right .trend_img2 {
+    position: relative;
+    left: 0;
+  }
+  .trend_img1 .trend_hover,
+  .trend_img2 .trend_hover2 {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    font-size: 1em;
+  }
+  .trend_circle,
+  .trend_circle2 {
+    width: 75px;
+    height: 75px;
+    top: -15%;
+  }
+  /* section left */
+  .service_wrapper {
+  }
+  .service_left {
+    grid-column: span 12;
+  }
+  .service_right {
+    grid-column: span 12;
+  }
+  .service_right > div:first-child span {
+    background-color: black;
+  }
+  .service_textbox {
+    grid-column: span 12;
+    padding: 1em;
+    display: flex;
+  }
+  .service_textbox p:nth-child(1) {
+    margin-bottom: 0;
+  }
+  .service_textbox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .service_textbox p:first-child {
+    display: block;
+  }
+  .service_textbox span {
+    display: none;
+  }
+  .service_textbox p {
+    display: none;
+  }
+  /* footer */
+  .footer_sns {
+    grid-column: 2 / span 11;
+  }
+  .footer_text {
+    grid-column: 2 / span 11;
+  }
+}
