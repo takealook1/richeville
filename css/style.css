@@ -46,7 +46,8 @@ nav {
   position: fixed;
   display: flex;
   justify-content: space-between;
-  padding: 2em 3em 2em 0;
+  align-items: center;
+  padding: 2em 3em 2em 3em;
   z-index: 9999;
 }
 .logo a img {
@@ -238,6 +239,9 @@ div.slick-slider {
 .modal_list {
   text-align: left;
   margin-left: 1.5em;
+}
+.modal_list a {
+  color: white;
 }
 .modal_list h2 {
   font-size: 2em;

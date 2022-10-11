@@ -28,7 +28,7 @@ $(window).on("wheel", function (e) {
   }
   var posTop = (page - 1) * $(window).height();
 
-  $html.animate({ scrollTop: posTop });
+  $html.animate({ scrollTop: posTop }, 1000);
 });
 
 // text
